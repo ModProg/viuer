@@ -33,7 +33,7 @@ use crossterm::{
     execute,
 };
 use image::DynamicImage;
-use printer::{Printer, PrinterType};
+use printer::Printer;
 
 mod config;
 mod error;
@@ -42,7 +42,7 @@ mod utils;
 
 pub use config::Config;
 pub use error::{ViuError, ViuResult};
-pub use printer::{get_kitty_support, is_iterm_supported, resize, KittySupport};
+pub use printer::{get_kitty_support, is_iterm_supported, resize, KittySupport, PrinterType};
 pub use utils::terminal_size;
 
 #[cfg(feature = "sixel")]
