@@ -1,3 +1,4 @@
+use crate::printer::PrinterType;
 use crate::utils;
 
 /// Configuration struct to customize printing behaviour.
@@ -29,6 +30,8 @@ pub struct Config {
     /// Use Sixel protocol if the terminal supports it. Defaults to true.
     #[cfg(feature = "sixel")]
     pub use_sixel: bool,
+    /// Forces a specific protocol.
+    pub force_protocol: Option<PrinterType>,
 }
 
 impl std::default::Default for Config {
@@ -46,6 +49,7 @@ impl std::default::Default for Config {
             use_iterm: true,
             #[cfg(feature = "sixel")]
             use_sixel: true,
+            force_protocol: None,
         }
     }
 }
